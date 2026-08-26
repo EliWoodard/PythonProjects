@@ -1,4 +1,6 @@
-import random, string, sys
+import random
+import string
+import sys
 
 # Program header
 print("===== Password Generator =====")
@@ -12,7 +14,6 @@ includeSpecialCharacters = input("Do you want to include special characters(Y/N)
 if (passwordLength < 3 or (includeNumbers != 'y' and includeNumbers != 'n') or (includeSpecialCharacters != 'y' and includeSpecialCharacters != 'n')):
     print("Invalid password options")
     sys.exit()
-
 
 # Define user password
 userPassword = ""
