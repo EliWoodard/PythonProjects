@@ -6,13 +6,24 @@ def AddItem(inventoryList):
     inventoryList[itemName] = [itemQuantity, itemPrice]
     print(f"Added {itemQuantity} {itemName} at ${itemPrice} each")
 
+# Delete item from list
+def DeleteItem(inventoryList):
+    selectedItem = input("Which item do you want to delete: ")
+    success = inventoryList.pop(selectedItem, None)  
+
+    if success is not None:
+        print(f"Successfully removed {selectedItem}")
+    else:
+        print(f"Couldn't find {selectedItem}")
+
 # inventory manager selection
 def InventoryHeader():
     print("===== Inventory Manager =====")
     print("1. Add Item")
     print("2. View Inventory")
     print("3. Search Inventory")
-    print("4. Exit")
+    print("4. Delete Item")
+    print("5. Exit")
     return int(input("\nChoose an option:"))
 
 # search inventory
@@ -36,9 +47,9 @@ inventory = {}
 userInput = InventoryHeader()
 print()
 
-while(userInput != 4):
-    if userInput > 4 or userInput < 1:
-        print ("Invalid option, please choose between 1 and 4.")
+while(userInput != 5):
+    if userInput > 5 or userInput < 1:
+        print ("Invalid option, please choose between 1 and 5.")
     elif userInput == 1:
         AddItem(inventory)
     elif userInput == 2:
@@ -46,6 +57,8 @@ while(userInput != 4):
     elif userInput == 3:
         SearchInventory(inventory)
     elif userInput == 4:
+        DeleteItem(inventory)
+    elif userInput == 5:
         break
     print()
     userInput = InventoryHeader()
