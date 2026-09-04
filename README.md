@@ -38,4 +38,3 @@ These projects are intentionally built from scratch without following full tutor
 I already have programming experience in other languages, so these projects focus primarily on becoming comfortable with **Python syntax, idioms, and standard library features** rather than learning programming fundamentals from scratch.
 
 The projects gradually increase in complexity as I become more comfortable with Python.
-
